@@ -7,7 +7,10 @@ const INITIAL_STATE = {
 };
 
 const cartReducer = createReducer(INITIAL_STATE, {
-  [ActionTypes.TOGGLE_DROP_DOWN]: state => (state.hidden = !state.hidden),
+  [ActionTypes.TOGGLE_DROP_DOWN]: state => ({
+    ...state,
+    hidden: !state.hidden
+  }),
   [ActionTypes.ADD_TO_CART]: (state, action) => {
     const { cartItems } = state;
     const { id, ...otherProps } = action.payload;
