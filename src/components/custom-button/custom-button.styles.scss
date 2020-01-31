@@ -20,6 +20,16 @@
     border: 1px solid black;
   }
 
+  &.inverted {
+    background-color: white;
+    color: black;
+
+    &:hover {
+      background-color: black;
+      color: white;
+    }
+  }
+
   &.google-sign-in {
     background-color: #4285f4;
     color: #fff;
