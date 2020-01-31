@@ -13,7 +13,7 @@ class Shop extends React.Component {
     return (
       <div className="shop-page">
         {collection.map(({ id, ...otherProps }) => (
-          <CollectionPreview key={id} {...otherProps} />
+          <CollectionPreview key={id} collectionId={id} {...otherProps} />
         ))}
       </div>
     );
