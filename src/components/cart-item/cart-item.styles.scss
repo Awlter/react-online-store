@@ -1,29 +1,23 @@
 .cart-item {
-  & + & {
-    margin-top: 1em;
-  }
-  display: grid;
-  grid-template-columns: 48px auto auto;
-  grid-template-rows: 1fr 1fr;
-  grid-column-gap: 1em;
+  width: 100%;
+  display: flex;
+  height: 80px;
+  margin-bottom: 15px;
 
-  .image {
-    height: auto;
-    background-size: cover;
-    grid-column: 1/2;
-    grid-row: 1/3;
+  img {
+    width: 30%;
   }
 
-  .name {
-    grid-column: 2/3;
-    grid-row: 1/2;
-  }
-
-  .info {
-    grid-column: 2/3;
-    grid-row: 2/3;
-    width: 50%;
+  .item-details {
+    width: 70%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px 20px;
+
+    .name {
+      font-size: 16px;
+    }
   }
 }
