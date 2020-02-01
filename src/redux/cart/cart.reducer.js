@@ -26,7 +26,17 @@ const cartReducer = createReducer(INITIAL_STATE, {
     const { cartItems } = state;
     const id = action.payload;
 
-    delete cartItems[id.toString()];
+    delete cartItems[id];
+  },
+  [ActionTypes.DECREASE_QUANTITY]: (state, action) => {
+    const { cartItems } = state;
+    const id = action.payload;
+
+    if (cartItems[id].itemCount === 1) {
+      delete cartItems[id];
+    } else {
+      cartItems[id].itemCount -= 1;
+    }
   }
 });
 

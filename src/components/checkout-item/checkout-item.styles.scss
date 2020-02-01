@@ -23,7 +23,13 @@
   }
 
   .quantity {
-    padding-left: 0.5em;
+    span:hover {
+      cursor: pointer;
+    }
+
+    .number {
+      margin: 0 0.3em;
+    }
   }
 
   .price {
