@@ -8,6 +8,7 @@ import {
   selectCartItems,
   selectCartItemsTotalPrice
 } from "../../redux/cart/cart.selectors";
+import CheckoutItem from "../../components/checkout-item/checkout-item.component";
 
 const CheckoutPage = ({ cartItems, CartItemsTotalPrice }) => {
   return (
@@ -21,6 +22,13 @@ const CheckoutPage = ({ cartItems, CartItemsTotalPrice }) => {
           )
         )}
       </div>
+      {Object.keys(cartItems).length ? (
+        Object.entries(cartItems).map(([index, cartItem]) => (
+          <CheckoutItem key={index} {...cartItem} />
+        ))
+      ) : (
+        <span className="empty-message">Your Cart is empty</span>
+      )}
       <div className="total">Total: ${CartItemsTotalPrice}</div>
     </div>
   );
