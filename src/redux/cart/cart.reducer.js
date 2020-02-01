@@ -21,6 +21,12 @@ const cartReducer = createReducer(INITIAL_STATE, {
       cartItems[id] = otherProps;
       cartItems[id].itemCount = 1;
     }
+  },
+  [ActionTypes.REMOVE_CART_ITEM]: (state, action) => {
+    const { cartItems } = state;
+    const id = action.payload;
+
+    delete cartItems[id.toString()];
   }
 });
 
