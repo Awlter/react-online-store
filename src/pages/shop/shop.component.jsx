@@ -1,4 +1,5 @@
 import React from "react";
+import "./shop.style.scss";
 import { Route, withRouter } from "react-router-dom";
 
 import CollectionOverview from "../../components/collection-overview/collection-overview";
