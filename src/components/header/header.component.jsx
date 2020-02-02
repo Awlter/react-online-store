@@ -19,10 +19,10 @@ const Header = ({ currentUser }) => (
       </Link>
     </div>
     <div className="options">
-      <Link className="option" to="/shop">
+      <Link className="option" to="shop">
         Shop
       </Link>
-      <Link className="option" to="/contacts">
+      <Link className="option" to="contacts">
         Contacts
       </Link>
       {currentUser ? (
@@ -30,7 +30,7 @@ const Header = ({ currentUser }) => (
           Sign Out
         </div>
       ) : (
-        <Link className="option" to="/signin">
+        <Link className="option" to="signin">
           Signin
         </Link>
       )}

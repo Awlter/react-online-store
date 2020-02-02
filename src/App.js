@@ -14,7 +14,6 @@ import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
 import CheckoutPage from "./pages/checkout/checkout.component";
-import CollectionOverview from "./pages/collection-overview/collection-overview.components";
 
 class App extends React.Component {
   unsubscribedFromAuth = null;
@@ -49,11 +48,8 @@ class App extends React.Component {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route exact path="/shop">
+          <Route path="/shop">
             <Shop />
-          </Route>
-          <Route exact path="/shop/:category">
-            <CollectionOverview />
           </Route>
           <Route path="/signin">
             {currentUser ? <Redirect to="/" /> : <SignInSignUp />}
